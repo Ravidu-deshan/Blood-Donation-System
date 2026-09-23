@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Donation</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+        
+        /*hero-section*/
+        .register-btn {
+            background: #e63946;
+            color: #fff;
+            border: none;
+            padding: 13px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 20px;
+        }
+        .donate-section {
+            text-align: center;
+            background-color: #f8fcfb;
+            padding: 20px;
+        }
+        .heart-icon {
+            font-size: 50px;
+            color: red;
+            margin-bottom: 10px;
+        }
+        h2 {
+            font-size: 35px;
+            font-weight: bold;
+            color: #eb2020;
+        }
+        p {
+            font-size: 19px;
+            color: #000000;
+        }
+        .content-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .form-container {
+            background: white;
+            padding: 40px;
+            border-radius: 11px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            flex: 1;
+            min-width: 300px;
+            max-width: 450px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        input, select, button {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: red;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .info-container {
+            flex: 2;
+            min-width: 300px;
+        }
+        .eligibility, .expectations {
+            text-align: justify;
+            margin-top: 20px;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 5px;
+        }
+        @media (max-width: 768px) {
+            .content-wrapper {
+                flex-direction: column;
+                align-items: center;
+            }
+            .form-container {
+                width: 100%;
+            }
+        }
+        .form-container h3 {
+            color: #e63946;
+        } 
+        
+    </style>
+</head>
+<body>
+    
+    <div id="navbar"></div>
+
+    <div class="container">
+        <div class="donate-section">
+            <div class="heart-icon">❤️</div>
+            <h2>Donate Blood, Save Lives</h2>
+            <p>Your blood donation can save up to three lives. Schedule your donation appointment today and become a hero in someone's story.</p>
+        </div>
+        <div class="content-wrapper">
+            <div class="form-container">
+                <form>
+                    <label>Full Name</label>
+                    <input type="text" placeholder="John Doe" required>
+                    
+                    <label>Phone Number</label>
+                    <input type="tel" placeholder="(123) 456-7890" required>
+                    
+                    <label>Preferred Date</label>
+                    <input type="date" required>
+                    
+                    <label>Preferred Time</label>
+                    <input type="time" required>
+                    
+                    <label>Preferred Location</label>
+                    <select required>
+                        <option value="">Select a donation center</option>
+                        <option value="center1">Center 1</option>
+                        <option value="center2">Center 2</option>
+                    </select>
+                    
+                    <button type="submit">Schedule Donation</button>
+                </form>
+            </div>
+            <div class="info-container">
+                <div class="form-container">
+                    <h3>❤️ Eligibility Requirements</h3>
+                    <ul>
+                        <li>✔ Be at least 17 years old</li>
+                        <li>✔ Weigh at least 110 pounds</li>
+                        <li>✔ Be in good general health</li>
+                        <li>✔ Have not donated blood in the last 56 days</li>
+                        <li>✔ Have a valid ID</li>
+                    </ul>
+                </div>
+                <div class="expectations">
+                    <div class="form-container">
+                    <h3>What to Expect</h3>
+                    <p>The donation process is safe, simple, and takes about an hour. Our trained staff will guide you through a mini-physical and the donation process. Remember to eat well and stay hydrated before your donation!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+   <footer>  <div id="footer"></div></footer>
+  
+
+</body>
+</html>

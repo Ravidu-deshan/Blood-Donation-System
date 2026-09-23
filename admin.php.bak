@@ -1,0 +1,69 @@
+<?php
+// session_start();
+// if (!isset($_SESSION['admin_logged_in'])) {
+//     header("Location: login.php"); // Redirect if not logged in
+//     exit();
+// }
+
+// Get section from the URL
+$section = isset($_GET['sec']) ? $_GET['sec'] : 1;
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - Blood Donation</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<div class="container-fluid">
+    <div class="row">
+        <!-- Sidebar Toggle Button (for Mobile) -->
+        <button class="btn btn-dark d-md-none" id="sidebarToggle">☰ Menu</button>
+
+        <!-- Sidebar -->
+        <nav class="col-md-3 col-lg-2 sidebar" id="sidebar">
+            <h4>Admin Panel</h4>
+            <a href="admin.php?sec=1" class="<?= ($section == 1) ? 'active' : '' ?>">New Donor</a>
+            <a href="admin.php?sec=2" class="<?= ($section == 2) ? 'active' : '' ?>">Appointments</a>
+            <a href="admin.php?sec=3" class="<?= ($section == 3) ? 'active' : '' ?>">Staff Reg</a>
+            <a href="admin.php?sec=4" class="<?= ($section == 4) ? 'active' : '' ?>">Reports</a>
+            <a href="admin.php?sec=5" class="<?= ($section == 5) ? 'active' : '' ?>">Poster</a>
+            <a href="admin.php?sec=6" class="<?= ($section == 6) ? 'active' : '' ?>">Add Donation</a>
+            <a href="admin.php?sec=7" class="<?= ($section == 7) ? 'active' : '' ?>">Request History</a>
+            <a href="admin.php?sec=8" class="<?= ($section == 8) ? 'active' : '' ?>">Blood Management</a>
+            <a href="request.php">Request</a>
+            <a href="logout.php">Logout</a>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="col-md-9 col-lg-10 p-4">
+            <h2>Admin Panel</h2>
+            <hr>
+            <div>
+                <?php
+                $file = "sections/section{$section}.php";
+                if (file_exists($file)) {
+                    include($file);
+                } else {
+                    echo "<p>Invalid section selected.</p>";
+                }
+                ?>
+            </div>
+        </main>
+    </div>
+</div>
+
+<!-- JavaScript for Sidebar Toggle -->
+<script>
+    document.getElementById("sidebarToggle").addEventListener("click", function() {
+        document.getElementById("sidebar").classList.toggle("show");
+    });
+</script>
+
+</body>
+</html>
